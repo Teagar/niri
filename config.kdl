@@ -2,7 +2,7 @@ prefer-no-csd
 
 include "config/environment.kdl"
 include "config/input.kdl"
-include "output/home.kdl"         // home|code
+include "output/home.kdl"         // home|coude
 include "extra/wallpaper.kdl"
 include "config/layout.kdl"
 include "config/startup.kdl"
