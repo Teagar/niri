@@ -3,8 +3,6 @@ binds {
 
   Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
   Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-  // Mod+Z hotkey-overlay-title="Run an Application: nocatlia" { spawn "qs -c noctalia-shell ipc call launcher toggle"; }
-  // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -33,9 +31,9 @@ binds {
   Mod+Shift+L     { move-column-right; }
 
   Mod+Home { focus-column-first; }
-  // Mod+End  { focus-column-last; }
-  Mod+Ctrl+Home { move-column-to-first; }
-  Mod+Ctrl+End  { move-column-to-last; }
+  Mod+End  { focus-column-last; }
+  Mod+Shift+Home { move-column-to-first; }
+  Mod+Shift+End  { move-column-to-last; }
 
   Mod+Left  { focus-monitor-left; }
   Mod+Down  { focus-monitor-down; }
@@ -84,14 +82,12 @@ binds {
   Mod+Shift+BracketLeft  { consume-or-expel-window-left; }
   Mod+Shift+BracketRight { consume-or-expel-window-right; }
 
-  // Consume one window from the right to the bottom of the focused column.
-  Mod+Comma  { consume-window-into-column; }
-  // Expel the bottom window from the focused column to the right.
-  Mod+Period { expel-window-from-column; }
+  Mod+Shift+Comma  { consume-window-into-column; } // Consume one window from the right to the bottom of the focused column.
+  Mod+Shift+Period { expel-window-from-column; } // Expel the bottom window from the focused column to the right.
 
-  Mod+R { switch-preset-column-width; }
-  Mod+Shift+R { switch-preset-window-height; }
-  Mod+Ctrl+R { reset-window-height; }
+  Mod+P { switch-preset-column-width; }
+  Mod+Shift+P { switch-preset-window-height; }
+  Mod+Ctrl+P { reset-window-height; }
 
   Mod+F { maximize-column; }
   Mod+Shift+F { fullscreen-window; }
@@ -110,7 +106,7 @@ binds {
   Mod+V       { toggle-window-floating; }
   Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-  // Mod+W { toggle-column-tabbed-display; }
+  //?? Mod+Ctrl+W { toggle-column-tabbed-display; }
 
   Print { screenshot; }
   Ctrl+Print { screenshot-screen; }
@@ -120,17 +116,18 @@ binds {
 
   Mod+Shift+Q { quit; }
 
-  Mod+Shift+P { power-off-monitors; }
+  // Mod+Shift+P { power-off-monitors; }
 
-  Mod+End { spawn "playerctl" "--player=spotify" "next"; }
-  Mod+Page_Down { spawn "playerctl" "--player=spotify" "previous"; }
-  Mod+Page_Up { spawn "playerctl" "--player=spotify" "play-pause"; }
-  Mod+F7 { spawn "playerctl" "--player=spotify" "position" "5-"; }
-  Mod+F8 { spawn "playerctl" "--player=spotify" "position" "5+"; }
-  Mod+F10 { spawn "playerctl" "--player=spotify" "position" "76"; }
+  // Mod+End { spawn "playerctl" "--player=spotify" "next"; }
+  // Mod+Page_Down { spawn "playerctl" "--player=spotify" "previous"; }
+  // Mod+Page_Up { spawn "playerctl" "--player=spotify" "play-pause"; }
+  // Mod+F7 { spawn "playerctl" "--player=spotify" "position" "5-"; }
+  // Mod+F8 { spawn "playerctl" "--player=spotify" "position" "5+"; }
+  // Mod+F10 { spawn "playerctl" "--player=spotify" "position" "76"; }
 
-  Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
-  Mod+Alt+P  hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+  Mod+Z repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
+  Mod+Alt+Z  hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+
   Mod+Space { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
   Mod+M { spawn-sh "pavucontrol"; }
 }
