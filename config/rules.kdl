@@ -1,0 +1,80 @@
+window-rule {
+  match is-window-cast-target=true
+  border {
+    on
+    width 2
+    active-color "#e100ff"
+    inactive-color "#e100ff"
+  }
+}
+window-rule {
+  match app-id=r#"^org\.wezfurlong\.wezterm$"#
+  default-column-width {}
+}
+
+window-rule {
+  // This app-id regular expression will work for both:
+  // - host Firefox (app-id is "firefox")
+  // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+  match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+  open-floating true
+}
+
+window-rule {
+  match app-id="^firefox$"
+  open-maximized true
+  open-on-workspace "browser"
+  // block-out-from "screen-capture"
+}
+
+window-rule {
+  match app-id="^kitty$"
+  open-focused true
+  open-on-workspace "workflow"
+}
+
+window-rule {
+  match app-id="^spotify$"
+  open-on-workspace "media"
+}
+
+/-window-rule {
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+  match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+  block-out-from "screen-capture"
+
+  // Use this instead if you want them visible on third-party screenshot tools.
+  // block-out-from "screencast"
+}
+
+window-rule {
+  geometry-corner-radius 12
+  clip-to-geometry true
+}
+
+window-rule {
+  // Use 'niri msg windows' no terminal para descobrir o id do seu jogo
+  match app-id="steam_app_"
+  match app-id="org.prismlauncher.PrismLauncher" 
+
+  open-on-workspace "games"
+}
+
+
+window-rule {
+  match app-id="at.yrlf.wl_mirror"
+
+  border {
+    on
+    width 2
+    active-color "#e100ff"
+    inactive-color "#e100ff"
+  }
+}
+
+window-rule {
+  match app-id="pavucontrol"
+  open-floating true
+}
+

@@ -1,0 +1,20 @@
+workspace "workflow" {
+  open-on-output "eDP-1"
+}
+
+workspace "media" {
+  open-on-output "eDP-1"
+}
+
+workspace "browser" {
+  open-on-output "eDP-1"
+}
+
+workspace "chat" {
+  open-on-output "eDP-1"
+}
+
+workspace "files" {
+  open-on-output "eDP-1"
+}
+

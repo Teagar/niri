@@ -1,0 +1,18 @@
+environment {
+  QT_QPA_PLATFORM "wayland"
+  XDG_CURRENT_DESKTOP "niri"
+  XDG_SESSION_TYPE "wayland"
+  // XDG_DESKTOP_PORTAL_DIR "/usr/share/xdg-desktop-portal/portals"
+
+  WLR_NO_HARDWARE_CURSORS "1"
+  LIBVA_DRIVER_NAME "nvidia"
+  __NV_PRIME_RENDER_OFFLOAD "1"
+  __GLX_VENDOR_LIBRARY_NAME "nvidia"
+  GBM_BACKEND "nvidia-drm"
+  DRI_PRIME "1"
+
+
+  // PIPEWIRE_DEBUG "0"
+  // OBS_USE_EGL "0"
+  // WLR_RENDERER_ALLOW_SOFTWARE "1"
+}
