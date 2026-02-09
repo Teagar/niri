@@ -1,3 +1,4 @@
+// Use 'niri msg windows' to show app-id
 window-rule {
   match is-window-cast-target=true
   border {
@@ -13,9 +14,6 @@ window-rule {
 }
 
 window-rule {
-  // This app-id regular expression will work for both:
-  // - host Firefox (app-id is "firefox")
-  // - Flatpak Firefox (app-id is "org.mozilla.firefox")
   match app-id=r#"firefox$"# title="^Picture-in-Picture$"
   open-floating true
 }
@@ -43,9 +41,6 @@ window-rule {
   match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
   block-out-from "screen-capture"
-
-  // Use this instead if you want them visible on third-party screenshot tools.
-  // block-out-from "screencast"
 }
 
 window-rule {
@@ -54,9 +49,8 @@ window-rule {
 }
 
 window-rule {
-  // Use 'niri msg windows' no terminal para descobrir o id do seu jogo
-  match app-id="steam_app_"
-  match app-id="org.prismlauncher.PrismLauncher" 
+  match app-id="^steam_app_"
+  match app-id="^org.prismlauncher.PrismLauncher" 
 
   open-on-workspace "games"
 }
@@ -76,5 +70,10 @@ window-rule {
 window-rule {
   match app-id="pavucontrol"
   open-floating true
+}
+
+window-rule {
+  match app-id="discord"
+  open-on-workspace "chat"
 }
 
