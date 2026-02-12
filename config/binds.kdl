@@ -30,10 +30,10 @@ binds {
   Mod+Shift+K     { move-window-up-or-to-workspace-up; }
   Mod+Shift+L     { move-column-right; }
 
-  Mod+Home { focus-column-first; }
-  Mod+End  { focus-column-last; }
-  Mod+Shift+Home { move-column-to-first; }
-  Mod+Shift+End  { move-column-to-last; }
+  // Mod+Home { focus-column-first; }
+  // Mod+End  { focus-column-last; }
+  // Mod+Shift+Home { move-column-to-first; }
+  // Mod+Shift+End  { move-column-to-last; }
 
   Mod+Left  { focus-monitor-left; }
   Mod+Down  { focus-monitor-down; }
@@ -118,15 +118,15 @@ binds {
 
   // Mod+Shift+P { power-off-monitors; }
 
-  // Mod+End { spawn "playerctl" "--player=spotify" "next"; }
-  // Mod+Page_Down { spawn "playerctl" "--player=spotify" "previous"; }
-  // Mod+Page_Up { spawn "playerctl" "--player=spotify" "play-pause"; }
+  Mod+End { spawn "playerctl" "--player=spotify" "next"; }
+  Mod+Page_Down { spawn "playerctl" "--player=spotify" "previous"; }
+  Mod+Page_Up { spawn "playerctl" "--player=spotify" "play-pause"; }
   // Mod+F7 { spawn "playerctl" "--player=spotify" "position" "5-"; }
   // Mod+F8 { spawn "playerctl" "--player=spotify" "position" "5+"; }
   // Mod+F10 { spawn "playerctl" "--player=spotify" "position" "76"; }
 
-  Mod+Z repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
-  Mod+Alt+Z  hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+  Mod+T repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
+  Mod+Alt+T  hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
 
   Mod+Space { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
   Mod+M { spawn-sh "pavucontrol"; }
