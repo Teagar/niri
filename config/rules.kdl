@@ -27,6 +27,7 @@ window-rule {
 
 window-rule {
   match app-id="^kitty$"
+  match app-id="VirtualBox Manage"
   open-focused true
   open-on-workspace "workflow"
 }
@@ -50,7 +51,11 @@ window-rule {
 
 window-rule {
   match app-id="^steam_app_"
+  match app-id="steam"
   match app-id="^org.prismlauncher.PrismLauncher" 
+  match app-id="^org.prismlauncher.PrismLauncher" 
+  match app-id="org.vinegarhq.Sober" 
+  match app-id="osu!" 
 
   open-on-workspace "games"
 }
@@ -62,9 +67,14 @@ window-rule {
   border {
     on
     width 2
-    active-color "#e100ff"
-    inactive-color "#e100ff"
+    // active-color "#e100ff"
+    // inactive-color "#e100ff"
+
+    active-gradient from="#e5989b" to="#e100ff" angle=45 relative-to="workspace-view" in="oklch longer hue"
+    inactive-gradient from="#e5989b" to="#e100ff" angle=45 relative-to="workspace-view"
   }
+
+  open-on-workspace "screencast"
 }
 
 window-rule {
@@ -75,5 +85,10 @@ window-rule {
 window-rule {
   match app-id="discord"
   open-on-workspace "chat"
+}
+
+window-rule {
+  match app-id="VirtualBox Machine"
+  open-on-workspace "virtual"
 }
 
