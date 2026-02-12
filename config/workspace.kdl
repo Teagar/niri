@@ -21,3 +21,11 @@ workspace "files" {
 workspace "games" {
   open-on-output "eDP-1"
 }
+
+workspace "virtual" {
+  open-on-output "eDP-1"
+}
+
+workspace "screencast" {
+  open-on-output "eDP-1"
+}
