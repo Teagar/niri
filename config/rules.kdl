@@ -56,8 +56,18 @@ window-rule {
   match app-id="^org.prismlauncher.PrismLauncher" 
   match app-id="org.vinegarhq.Sober" 
   match app-id="osu!" 
+  match app-id="sober" 
+  match app-id="pcsx2-qt" 
 
   open-on-workspace "games"
+}
+
+window-rule {
+  match app-id="^steam_app_"
+  match app-id="steam"
+  match app-id="pcsx2-qt" 
+  open-fullscreen true
+  open-focused true
 }
 
 
@@ -85,6 +95,7 @@ window-rule {
 window-rule {
   match app-id="discord"
   open-on-workspace "chat"
+  open-maximized true
 }
 
 window-rule {
