@@ -129,5 +129,7 @@ binds {
   Mod+Alt+T  hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
 
   Mod+Space { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  Mod+X { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
   Mod+M { spawn-sh "pavucontrol"; }
+  Mod+Shift+R { spawn-sh "qs -c noctalia-shell"; }
 }
