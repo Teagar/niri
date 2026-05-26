@@ -30,10 +30,11 @@ window-rule {
   match app-id="VirtualBox Manage"
   open-focused true
   open-on-workspace "workflow"
+  draw-border-with-background false
 }
 
 window-rule {
-  match app-id="^spotify$"
+  match app-id="^Spotify$"
   open-on-workspace "media"
 }
 
@@ -68,6 +69,11 @@ window-rule {
   match app-id="pcsx2-qt" 
   open-fullscreen true
   open-focused true
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
 
