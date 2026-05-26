@@ -2,7 +2,9 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-  Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+  // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+  Mod+D hotkey-overlay-title="Run an Application: noctalia-shell" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+  Mod+Shift+C hotkey-overlay-title="Run an Application: clipboard" { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
 
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -123,7 +125,7 @@ binds {
   Mod+Page_Up { spawn "playerctl" "--player=spotify" "play-pause"; }
   // Mod+F7 { spawn "playerctl" "--player=spotify" "position" "5-"; }
   // Mod+F8 { spawn "playerctl" "--player=spotify" "position" "5+"; }
-  // Mod+F10 { spawn "playerctl" "--player=spotify" "position" "76"; }
+  Mod+F10 { spawn "playerctl" "--player=spotify" "position" "76"; }
 
   Mod+T repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
   Mod+Alt+T  hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
