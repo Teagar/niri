@@ -12,6 +12,10 @@ environment {
   GBM_BACKEND "nvidia-drm"
   DRI_PRIME "1"
 
+  // NIRI_DISABLE_DIRECT_SCANOUT "1"
+  // prefer-no-csd
+  // DISPLAY ":0"
+
 
   // PIPEWIRE_DEBUG "0"
   // OBS_USE_EGL "0"

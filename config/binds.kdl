@@ -129,6 +129,7 @@ binds {
 
   Mod+T repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
   Mod+Shift+T hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action clear-dynamic-cast-target && niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+  // Mod+Alt+T hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action clear-dynamic-cast-target && niri msg action set-dynamic-cast- --id $(niri msg --json pick-window | jq .id)"; }
 
   Mod+Space { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
   Mod+X { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
