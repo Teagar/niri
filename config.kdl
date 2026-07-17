@@ -6,7 +6,7 @@ include "output/home.kdl"         // home|coude|gaming|record
 include "extra/wallpaper.kdl"
 include "config/layout.kdl"
 include "config/startup.kdl"
-include "config/rules.kdl"
+include "config/rules/00-main.kdl"
 include "config/debug.kdl"
 include "config/binds.kdl"
 include "config/workspace.kdl"

@@ -136,3 +136,5 @@ window-rule {
       color "#aaaaaaff"
     }
 }
+
+// LEGACY: desativado. Regras ativas em config/rules/00-main.kdl

@@ -1,0 +1,6 @@
+window-rule {
+  match app-id=r#"^VirtualBox Manage$"#
+  open-focused true
+  open-on-workspace "workflow"
+  draw-border-with-background false
+}
