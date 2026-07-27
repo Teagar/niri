@@ -3,8 +3,8 @@ binds {
 
   Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
   // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-  Mod+D hotkey-overlay-title="Run an Application: noctalia-shell" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-  Mod+Shift+C hotkey-overlay-title="Run an Application: clipboard" { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+  Mod+D hotkey-overlay-title="Run an Application: noctalia-shell" { spawn-sh "noctalia msg panel-toggle launcher"; }
+  Mod+Shift+C hotkey-overlay-title="Run an Application: clipboard" { spawn-sh "noctalia msg panel-toggle clipboard"; }
 
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -131,11 +131,12 @@ binds {
   Mod+Shift+T hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action clear-dynamic-cast-target && niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
   // Mod+Alt+T hotkey-overlay-title="Cast focused window" repeat=false { spawn-sh "niri msg action clear-dynamic-cast-target && niri msg action set-dynamic-cast- --id $(niri msg --json pick-window | jq .id)"; }
 
-  Mod+Space { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-  Mod+X { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+  Mod+Space { spawn-sh "noctalia msg panel-toggle control-center"; }
+  Mod+X { spawn-sh "noctalia msg session lock"; }
   Mod+M { spawn-sh "pavucontrol"; }
-  Mod+Shift+R { spawn-sh "qs -c noctalia-shell"; }
+  Mod+Shift+R { spawn-sh "noctalia"; }
+  XF86Presentation { spawn-sh "~/.local/scripts/toggle_fan.sh"; }
 
 
-  Mod+F9 { spawn-sh "~/.local/share/mirage-autoloot/toggle-autoloot.sh"; }
+  // Mod+F9 { spawn-sh "~/.local/share/mirage-autoloot/toggle-autoloot.sh"; }
 }
