@@ -1,6 +1,7 @@
 window-rule {
   match app-id="^Spotify$"
   open-on-workspace "media"
+  open-maximized true
 }
 
 window-rule {

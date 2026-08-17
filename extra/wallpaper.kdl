@@ -4,9 +4,19 @@ layer-rule {
   place-within-backdrop true
 }
 
+layer-rule {
+    match namespace="mpvpaper"
+    place-within-backdrop true
+}
+layout {
+    background-color "transparent"
+}
+
 // Optionally, disable the workspace shadows in the overview.
 overview {
+
   workspace-shadow {
     off
   }
 }
+

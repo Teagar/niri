@@ -1,5 +1,6 @@
 window-rule {
   match app-id="^steam_app_"
+  match app-id="^hydra"
   match app-id="steam"
   match app-id="^org.prismlauncher.PrismLauncher"
   match app-id="org.vinegarhq.Sober"
@@ -13,12 +14,14 @@ window-rule {
 
 window-rule {
   match app-id="^steam_app_"
+  match app-id="^hydra"
   open-fullscreen true
   open-focused true
 }
 
 window-rule {
   match app-id="steam"
+  match app-id="^hydra"
   open-maximized true
 }
 
