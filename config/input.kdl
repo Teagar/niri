@@ -25,3 +25,8 @@ input {
     // warp-mouse-to-focus
      focus-follows-mouse max-scroll-amount="0%"
 }
+
+cursor {
+    hide-after-inactive-ms 5000
+    hide-when-typing
+}
