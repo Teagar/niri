@@ -4,10 +4,11 @@ window-rule {
   match app-id="steam"
   match app-id="^org.prismlauncher.PrismLauncher"
   match app-id="org.vinegarhq.Sober"
-  match app-id="osu!"
+  match app-id="^osu!"
   match app-id="sober"
   match app-id="pcsx2-qt"
   match app-id="gamescope"
+  match app-id="lunarclient"
 
   open-on-workspace "games"
 }
@@ -33,4 +34,9 @@ window-rule {
 window-rule {
   match app-id="gamescope"
   open-fullscreen true
+}
+
+window-rule {
+    match title="Ubisoft Connect"
+    open-floating true
 }
